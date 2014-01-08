@@ -2,9 +2,9 @@ package com.mgoenka.example.tipcalculator;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.view.Menu;
 import android.view.View;
-import android.widget.Toast;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class TipCalculator extends Activity {
 
@@ -13,27 +13,30 @@ public class TipCalculator extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_tip_calculator);
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.tip_calculator, menu);
-		return true;
+	
+	protected String getTotal(View v, int percent) {
+		EditText editText = (EditText)findViewById(R.id.etTotal);
+		String editTextStr = editText.getText().toString();
+		double tipTotal = Math.round(Float.parseFloat(editTextStr) * percent) / 100.0;
+		
+		return String.format("%.2f", tipTotal);
+	}
+	
+	protected void displayTip(String tipTotal) {
+		TextView tv = (TextView)findViewById(R.id.tvTip);
+		tv.setText("Tip is: $" + tipTotal);
 	}
 	
 	public void onTen(View v) {
-		// Generating an alert in Android
-		Toast.makeText(getBaseContext(), "1", Toast.LENGTH_SHORT).show();
+		displayTip(getTotal(v, 10));
 	}
 
 	public void onFifteen(View v) {
-		// Generating an alert in Android
-		Toast.makeText(getBaseContext(), "2", Toast.LENGTH_SHORT).show();
+		displayTip(getTotal(v, 15));
 	}
 
 	public void onTwenty(View v) {
-		// Generating an alert in Android
-		Toast.makeText(getBaseContext(), "3", Toast.LENGTH_SHORT).show();
+		displayTip(getTotal(v, 20));
 	}
 
 }
