@@ -12,23 +12,14 @@
         android:id="@+id/etTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/bTen"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignRight="@+id/bTwenty"
         android:ems="10"
         android:inputType="numberDecimal" >
 
         <requestFocus />
     </EditText>
-
-    <Button
-        android:id="@+id/bTen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/bFifteen"
-        android:layout_alignBottom="@+id/bFifteen"
-        android:layout_alignLeft="@+id/etTotal"
-        android:onClick="onTen"
-        android:text="@string/ten_percent" />
 
     <Button
         android:id="@+id/bFifteen"
@@ -39,15 +30,6 @@
         android:onClick="onFifteen"
         android:text="@string/fifteen_percent" />
 
-    <Button
-        android:id="@+id/bTwenty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/etTotal"
-        android:layout_centerVertical="true"
-        android:onClick="onTwenty"
-        android:text="@string/twenty_percent" />
-
     <TextView
         android:id="@+id/tvTip"
         android:layout_width="wrap_content"
@@ -56,5 +38,25 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp"
         android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/bTen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="25dp"
+        android:layout_toLeftOf="@+id/bFifteen"
+        android:onClick="onTen"
+        android:text="@string/ten_percent" />
+
+    <Button
+        android:id="@+id/bTwenty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="25dp"
+        android:layout_toRightOf="@+id/bFifteen"
+        android:onClick="onTwenty"
+        android:text="@string/twenty_percent" />
 
 </RelativeLayout>
