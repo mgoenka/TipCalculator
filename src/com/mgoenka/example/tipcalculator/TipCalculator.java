@@ -24,7 +24,7 @@ public class TipCalculator extends Activity {
 	
 	protected void displayTip(String tipTotal) {
 		TextView tv = (TextView)findViewById(R.id.tvTip);
-		tv.setText("Tip is: $" + tipTotal);
+		tv.setText(getString(R.string.tip_total) + tipTotal);
 	}
 	
 	public void onTen(View v) {
