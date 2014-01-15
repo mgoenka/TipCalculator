@@ -25,9 +25,9 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f080005;
-        public static final int bFifteen=0x7f080002;
+        public static final int bFifteen=0x7f080003;
         public static final int bTen=0x7f080001;
-        public static final int bTwenty=0x7f080003;
+        public static final int bTwenty=0x7f080002;
         public static final int etTotal=0x7f080000;
         public static final int tvTip=0x7f080004;
     }
